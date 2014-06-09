@@ -8,7 +8,7 @@ Created on Mon Jun 02 09:51:01 2014
 # -*- coding: utf-8 -*-
 
 import menu
-import obesos
+import Obesos
 import util
 
 
@@ -17,12 +17,12 @@ fxObesos = "fxObesos.dat"
 
 def ler_ficheiros():
 	# adicionar todos ficheiros a ler
-	obesos.listaAlunos = util.ler_ficheiro(fxObesos)
+	Obesos.listaAlunos = util.ler_ficheiro(fxObesos)
 
 
 def escrever_ficheiros():
 	# adicionar todos ficheiros a guardar
-	util.escrever_ficheiro(fxObesos, obesos.listaObesos)
+	util.escrever_ficheiro(fxObesos, Obesos.listaObesos)
 
 
 
@@ -35,7 +35,7 @@ while not terminar:
     op = menu.principal()
     
     if op == '1':
-        obesos.gerir()
+        Obesos.gerir()
     elif op == '2':
         pass    #por fazer
     elif op == '0':

@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+# -*- coding: iso8859-1 -*-
 """
 Created on Mon Jun 02 09:55:14 2014
 
@@ -12,7 +12,7 @@ from collections import namedtuple
 import menu
 
 
-obesoReg = namedtuple("obesoReg", "id, nome")
+obesoReg = namedtuple("obesoReg", "id, nome, telefone")
 listaObesos = []
 
 
@@ -33,13 +33,14 @@ def inserir_obeso():
     pos = encontrar_posicao(cod)
 
     if pos >= 0:
-        print "C√≥digo j√° existe"
+        print "CÛdigo j· existe"
         return
 
     #ler dados
     nome = raw_input("Qual o nome? ")
+    telefone = raw_input("Qual o telefone? ")
     
-    registo = obesoReg(cod, nome)
+    registo = obesoReg(cod, nome, telefone)
     listaObesos.append(registo)
 
 
@@ -49,43 +50,45 @@ def pesquisar_obeso():
     pos = encontrar_posicao(cod)
 
     if pos == -1:
-        print "N√£o existe obeso com esse c√≥digo"
+        print "N„o existe obeso com esse cÛdigo"
         return
 
-    print "C√≥digo: ", listaObesos[pos].id
+    print "CÛdigo: ", listaObesos[pos].id
     print "Nome: ", listaObesos[pos].nome
+    print "Telefone: ", listaObesos[pos].telefone
     
 
 
 def listar_obeso():
     for i in range (len(listaObesos)):
-        print "C√≥digo: ", listaObesos[i].id
+        print "CÛdigo: ", listaObesos[i].id
         print "Nome: ", listaObesos[i].nome
+        print "Telefone: ", listaObesos[pos].telefone
         
   
 
 def eliminar_obeso():
-    cod = input ("C√≥digo do obeso a eliminar --> ")
+    cod = input ("CÛdigo do obeso a eliminar --> ")
     pos = encontrar_posicao(cod)
 
     if pos == -1:
-        print "N√£o existe obeso com esse c√≥digo"
+        print "N„o existe obeso com esse cÛdigo"
         return
 
-    # TODO: Confirmar elimina√ß√£o
+    # TODO: Confirmar eliminaÁ„o
     listaObesos.pop(pos)
 
 
     
 def alterar_obeso():
-    cod = input ("C√≥digo do obeso a alterar --> ")
+    cod = input ("CÛdigo do obeso a alterar --> ")
     pos = encontrar_posicao(cod)
 
     if pos == -1:
-        print "N√£o existe obeso com esse c√≥digo"
+        print "N„o existe obeso com esse cÛdigo"
         return
 
-    # s√≥ altera o nome
+    # sÛ altera o nome
     novonome = raw_input("Qual o nome? ")
     listaObesos[pos] = listaObesos[pos]._replace(nome=novonome)
 
@@ -117,4 +120,4 @@ def gerir():
 
 
 if __name__ == "__main__":
-    print "Este programa n√£o deve ser executado diretamente"
+    print "Este programa n„o deve ser executado diretamente"
